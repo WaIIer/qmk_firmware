@@ -1,6 +1,6 @@
-#include "config_common.h"
+#pragma once
 
-// Common config file included by other WaIIer Keyboards
+#include "config_common.h"
 
 #define VENDOR_ID 0x0072
 #define MANUFACTURER WaIIer
@@ -17,7 +17,10 @@
 
 #define DIODE_DIRECTION COL2ROW
 
-#define USB_MAX_POWER_CONUMPTION 1250
-
+#define RGBLIGHT_ANIMATIONS_OFF
+#define RGBLIGHT_LAYERS
 #define RGB_DI_PIN E6
 #define RGBLED_NUM 47
+#define RGBLIGHT_HUE_STEP 10
+#define RBGLIGHT_SAT_STEP 17
+#define RGBLIGHT_VAL_STEP 17
