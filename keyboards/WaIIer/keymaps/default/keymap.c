@@ -50,28 +50,42 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // SAT: S * 255 / 100
 // VAL: V * 255 / 100
 
-#define WAIIER_WHITE 0,   0,   128
-#define WAIIER_RED   0,   255, 128
-#define WAIIER_BLUE  170, 255, 128
-#define WAIIER_GREEN 85,  220, 128
-
+#define WAIIER_WHITE  0,   0,   128
+#define WAIIER_RED    0,   255, 128
+#define WAIIER_BLUE   170, 255, 128
+#define WAIIER_GREEN  85,  220, 128
+#define WAIIER_TEAL   132, 231, 128
+#define WAIIER_ORANGE 14,  255, 200
+#define WAIIER_PURPLE 190, 190, 128
+#define WAIIER_PINK   212, 214, 128
 
 const rgblight_segment_t PROGMEM my_layer0_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 47, WAIIER_RED}
+    {0,  1,  WAIIER_PURPLE},
+    {1,  10, WAIIER_ORANGE},
+    {11, 2,  WAIIER_TEAL},
+    {13, 10, WAIIER_BLUE},
+    {23, 2,  WAIIER_PURPLE},
+    {25, 10, WAIIER_PINK},
+    {35, 6,  WAIIER_TEAL},
+    {41, 6,  WAIIER_PURPLE}
 );
 
 const rgblight_segment_t PROGMEM my_layer1_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
-    {12, 24, WAIIER_WHITE }
+    {0, 47, WAIIER_RED}
 );
 
 const rgblight_segment_t PROGMEM my_layer2_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
-    {12, 24, WAIIER_BLUE }
+    {0, 47, WAIIER_TEAL}
 );
 
 const rgblight_segment_t PROGMEM my_layer3_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
-    {8,  3, WAIIER_GREEN},
-    {13, 3, WAIIER_GREEN},
-    {32, 3, WAIIER_GREEN}
+    {0,  8,  WAIIER_WHITE},
+    {8,  3,  WAIIER_GREEN},
+    {11, 2,  WAIIER_WHITE},
+    {13, 3,  WAIIER_GREEN},
+    {16, 16, WAIIER_WHITE},
+    {32, 3,  WAIIER_GREEN},
+    {35, 12, WAIIER_WHITE}
 );
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
