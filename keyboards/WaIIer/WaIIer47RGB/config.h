@@ -6,7 +6,7 @@
 #define MANUFACTURER WaIIer
 #define PRODUCT_ID 0x0001
 #define DEVICE_VER 0
-#define PRODUCT WaIIerRGB
+#define PRODUCT WaIIer47RGB
 
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 12

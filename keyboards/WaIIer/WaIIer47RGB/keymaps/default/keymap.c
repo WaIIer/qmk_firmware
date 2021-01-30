@@ -14,10 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#define NUM_LAYERS 4
+
 #include QMK_KEYBOARD_H
 
-#define NUM_LAYERS 4
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_RGB_ORTHO( // default
