@@ -18,8 +18,6 @@
 
 #include QMK_KEYBOARD_H
 
-#include "../../../WaIIerRGB/WaIIerRgbColors.h"
-
 enum layer_names {
     BASE,
     FN
@@ -34,35 +32,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_LGUI, KC_LALT,                                  KC_SPC, KC_RALT, KC_RGUI, MO(FN),  KC_RCTL
     ),
     [FN] = LAYOUT(
-        KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,
-        KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,          KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS,          KC_TRNS,          KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS,                                                        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+        KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,  KC_DEL,
+        KC_TRNS, KC_TRNS, KC_UP,   KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,          KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS,          RGB_TOG,          RGB_HUI,  RGB_SAI, RGB_VAD, RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW, RGB_MOD, RGB_M_K, RGB_M_X,
+        KC_TRNS, KC_TRNS, KC_TRNS,                                                        KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
-
-const rgblight_segment_t PROGMEM base_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 61, WAIIER_BLUE}
-);
-
-const rgblight_segment_t PROGMEM fn_rgb[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 61, WAIIER_PURPLE}
-);
-
-const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-   base_rgb,
-   fn_rgb
-);
-
-void keyboard_post_init_user(void) {
-    rgblight_layers = rgb_layers;
-    layer_state_set_user(layer_state);
-}
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    for (int i = 0; i < NUM_LAYERS; i++) {
-        rgblight_set_layer_state(i, layer_state_cmp(state, i));
-    }
-    return state;
-}

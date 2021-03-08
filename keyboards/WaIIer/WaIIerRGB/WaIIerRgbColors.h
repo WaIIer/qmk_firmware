@@ -14,11 +14,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// hue, saturation, value colors:
+// https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgblight
 #define WAIIER_WHITE  0,   0,   128
 #define WAIIER_RED    0,   255, 128
 #define WAIIER_BLUE   170, 255, 128
 #define WAIIER_GREEN  85,  220, 128
 #define WAIIER_TEAL   132, 231, 128
-#define WAIIER_ORANGE 14,  255, 200
-#define WAIIER_PURPLE 190, 190, 128
+#define WAIIER_ORANGE 14,  255, 128
+#define WAIIER_PURPLE 180, 255, 128
 #define WAIIER_PINK   212, 214, 128
